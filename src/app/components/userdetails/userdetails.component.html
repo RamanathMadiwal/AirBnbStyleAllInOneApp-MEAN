@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <h3>User Details for Hosting</h3>
+      <form #userDetailsValue="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input class="form-control"
+                 placeholder="name"
+                 ngModel
+                 name="name"
+                 [(ngModel)]="userDetails.name"
+          />
+        </div>
+        <input type="submit" value="SUBMIT" class="btn btn-success btn-lg btn-block"/>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <!--<table class="responsive-table highlight">-->
+      <!--<thead>-->
+      <!--<tr>-->
+        <!--<th>Name</th>-->
+        <!--&lt;!&ndash;<th>Position</th>&ndash;&gt;-->
+        <!--&lt;!&ndash;<th>Office</th>&ndash;&gt;-->
+        <!--<th></th>-->
+      <!--</tr>-->
+      <!--</thead>-->
+      <!--<tr *ngFor="let user of userDetailsContent">-->
+        <!--<td>{{user.name}}</td>-->
+        <!--&lt;!&ndash;<td>{{emp.position}}</td>&ndash;&gt;-->
+        <!--&lt;!&ndash;<td>{{emp.office}}</td>&ndash;&gt;-->
+        <!--<td>-->
+          <!--<button class="btn-primary" (click)="onEdit(user)">Edit</button>-->
+          <!--&lt;!&ndash;<button class="btn-danger" (click)="onDelete(user._id,employeeForm)">Delete</button>&ndash;&gt;-->
+        <!--</td>-->
+      <!--</tr>-->
+    <!--</table>-->
+
+
+    <table class="table">
+      <tr *ngFor="let user of userDetailsContent">
+        <td class="text-left ">
+          <a (click)="edit(user)">
+            <span *ngIf="task!==editTask">{{user.name}}</span>
+            <input *ngIf="task===editTask" [(ngModel)]="user.name" (blur)="update()" (keyup.enter)="update()">
+          </a>
+        </td>
+        <td class="text-right">
+          <button class="btn btn-danger" title="delete task" (click)="delete(user)">Delete</button>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+</div>
