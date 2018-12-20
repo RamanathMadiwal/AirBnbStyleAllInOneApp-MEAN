@@ -42,3 +42,6 @@ router.get('', function(req, res) {
       return res.json(foundRentals);
     });
 });
+
+
+module.exports = router;

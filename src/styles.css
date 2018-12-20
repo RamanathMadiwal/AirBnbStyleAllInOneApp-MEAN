@@ -12,10 +12,14 @@
 }
 
 .main-block{
-  margin: auto;
+  margin: 50px 0 0 0;
   position: center;
+  width: 600px;
+  height: 400px;
   left:0;
   right: 0;
   top: 0;
   bottom: 0;
+
+
 }

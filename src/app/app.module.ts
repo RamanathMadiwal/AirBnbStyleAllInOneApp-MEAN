@@ -9,30 +9,31 @@ import {HttpClientModule} from '@angular/common/http';
 import {LoginComponent} from './components/login/login.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {BookingdialogComponent} from './bookingdialog/bookingdialog.component';
-import {AddRentalComponent} from './components/add-rental/add-rental.component';
+
 import {HomeComponent} from './components/home/home.component';
 import {RegisterComponent} from "./components/register/register.component";
-import {RentalService} from './shared/rental.service';
 import { UserdetailsComponent } from './components/userdetails/userdetails.component'
-
+import {RentalModule} from "./rental/rental.module";
 /* common Modules */
 import { ToastrService } from './common/toastr.service';
 import { ChangepasswordComponent } from './components/changepassword/changepassword.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { RentalListComponent } from './rental/rental-list/rental-list.component';
+import { RentalListItemComponent } from './rental/rental-list-item/rental-list-item.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NavbarComponent,
     BookingdialogComponent,
-    AddRentalComponent,
     RegisterComponent,
     HomeComponent,
     UserdetailsComponent,
     ChangepasswordComponent,
     ProfileComponent,
     LogoutComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -40,9 +41,10 @@ import { LogoutComponent } from './components/logout/logout.component';
     NgbModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RentalModule
   ],
-  providers: [RentalService,ToastrService],
+  providers: [ToastrService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

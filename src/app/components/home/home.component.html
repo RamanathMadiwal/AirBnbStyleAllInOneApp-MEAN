@@ -1,18 +1,19 @@
 <div class="row">
-  <div class="main-block">
-    <div class="card  " style="width: 30rem">
-      <h3 class="card-title"> Book Unique Homes and Hotels</h3>
+  <div class="mx-auto">
+    <div class="card main-block bg-dark">
+      <h3 class="card-title text-white text-center"> Book Unique Homes and Hotels</h3>
       <div class="card-body">
         <form class="form-group" #formdetails="ngForm" (ngSubmit)="onTemplateBasedForm()">
-          <label>Where</label>
+          <label class="text-dark">Where</label>
           <input class="form-control"
                  type="text"
                  name="searchparameter"
                  [(ngModel)]="bookingDetails.searchparameter"
           >
-          <label>Check In</label>
-
-          <label>Check Out</label>
+          <label class="text-white">Check In</label>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label class="text-white">Check Out</label>
           <form class="form-inline">
             <div class="form-group">
               <div class="input-group">
@@ -43,7 +44,7 @@
             </div>
           </form>
           <div class="form-group">
-            <label >Guests</label>
+            <label class="text-white">Guests</label>
             <select class="form-control"
                     name="guestnumber"
                     [(ngModel)]="bookingDetails.guestnumber">

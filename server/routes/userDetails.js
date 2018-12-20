@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const UserDetails = require('../model/userdetails');
+const UserDetails = require('../models/userdetails');
 var ObjectId = require('mongoose').Types.ObjectId;
 
 const { normalizeErrors } = require('../helpers/mongoose');

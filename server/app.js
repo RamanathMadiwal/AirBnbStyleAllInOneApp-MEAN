@@ -5,7 +5,15 @@ const cors = require("cors");
 const path = require('path');
 const userDetails = require("./routes/userDetails");
 var user = require('./routes/users');
-const port = 4000;
+const port =  process.env.PORT ||4000;
+
+
+const rentalRoutes = require('./routes/rentals'),
+  userRoutes = require('./routes/users'),
+  bookingRoutes = require('./routes/bookings');
+  //,
+  // imageUploadRoutes = require('./routes/image-upload');
+
 
 const app = express();
 const url ='mongodb://hotelapp:India123@ds151070.mlab.com:51070/hotelapp';
@@ -26,12 +34,14 @@ app.use(cors());
 
 //Body Parser MW
 app.use(bodyParser.json());
-// express router
-var apiRoutes = express.Router();
 
-console.log("The control came here");
+
+app.use('/api/v1/rentals', rentalRoutes);
+app.use('/api/v1/users', userRoutes);
+app.use('/api/v1/bookings', bookingRoutes);
+//app.post('/api/v1', imageUploadRoutes);
 app.use("/api", userDetails);
-apiRoutes.use(user.authenticate);
+
 
 const appPath = path.join(__dirname, '..', 'dist/allinone');
 app.use(express.static(appPath));
@@ -41,8 +51,8 @@ app.get('/', function(req, res) {
   res.sendFile(path.resolve(appPath, 'index.html'));
 });
 
-app.post('/api/register', user.signup);
-app.post('/api/login', user.login);
+// app.post('/api/register', user.signup);
+// app.post('/api/login', user.login);
 
 
 

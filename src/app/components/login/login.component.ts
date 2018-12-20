@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
     this.route.params.subscribe((params) => {
       if (params['registered'] === 'success') {
-        this.notifyMessage = 'You have been succesfuly registered, you can login now!';
+        this.notifyMessage = 'You have been successfuly registered, you can login now!';
       }
     })
   }
